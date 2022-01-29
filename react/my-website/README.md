@@ -1,5 +1,6 @@
-# my app
-this is my code following the react introduction tutorial.
+# my website
+this is purely a test of my understanding of react, a simple demo website with some interactive features.
+this strengthened my learning from the tutorial (in my-app). Using props and state, pressing the button will re-render the page to update certain parts.
 
 # auto generated stuff
 
