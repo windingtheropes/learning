@@ -1,0 +1,6 @@
+
+[04//15//2022] [08:04.50.45]
+Query: .git
+Directory: .
+Options: -d
+
