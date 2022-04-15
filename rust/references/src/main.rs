@@ -12,6 +12,8 @@ fn main() {
      println!("Inside main scope.");
      println!("Here is s inside main scope, after running secondary function with ref: {}", s);
      
+    let just_a_normal_return = get_return();
+    println!("{}", just_a_normal_return);
 }
 
 // &String is a reference. if placed in arguments of a function, a reference won't take ownership of the variable, as the reference is a pointer to the variable's data.
@@ -30,9 +32,17 @@ fn takes_ref_2(s: &mut String)
     s.push_str(", This is an update.");
 }
 
+fn get_return() -> String { // there are no references needed for this, because no variable is passed, and it returns 
+    let s = String::from("Returned string");
+    s
+}
+
 // There can only be one mutable reference pointing to the same variable at one time
 // There can be as many immutable references pointing to the same variable at one time
 // There cannot be both immutable references and mutable references pointing to the same variable at one time
 
 // By one time this means in the scope, to be infered.
 // Anything becomes invalid when leaving the scope it was created in, meaning you could create a mutable reference in a scope then leave the scope and be able to make another mutable reference without issues.
+
+// You can't create 'dangling' references, references that refer to nonexistant variables that have ex. gone out of scope. the compiler will prevent you.
+
