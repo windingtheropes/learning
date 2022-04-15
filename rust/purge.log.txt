@@ -4,3 +4,9 @@ Query: .git
 Directory: .
 Options: -d
 
+
+[04//15//2022] [08:29.02.161]
+Query: .gitignore
+Directory: .
+Options: -f
+
