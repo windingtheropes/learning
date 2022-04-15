@@ -1,2 +1,3 @@
-# learning repository
-This is a repository filled with subfolders of certain frameworks/languages I'm interested in learning and I thought I'd make it public. 
+# learning
+this repository is filled with code snippets and projects I've used to improve my understanding of that concept, such as a language or a framework. 
+I try to organize projects by concept.
