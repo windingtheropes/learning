@@ -29,3 +29,10 @@ fn takes_ref_2(s: &mut String)
     println!("Inside secondary function scope");
     s.push_str(", This is an update.");
 }
+
+// There can only be one mutable reference pointing to the same variable at one time
+// There can be as many immutable references pointing to the same variable at one time
+// There cannot be both immutable references and mutable references pointing to the same variable at one time
+
+// By one time this means in the scope, to be infered.
+// Anything becomes invalid when leaving the scope it was created in, meaning you could create a mutable reference in a scope then leave the scope and be able to make another mutable reference without issues.
