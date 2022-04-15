@@ -1,0 +1,6 @@
+
+[04//15//2022] [08:28.51.271]
+Query: .gitignore
+Directory: .
+Options: -d
+
