@@ -22,7 +22,7 @@ fn main() {
     }
 }
 
-fn first_word(s: &String) -> &str {
+fn first_word(s: &str) -> &str { // &str allows string literals and String references.
     let bytes = s.as_bytes();
 
     for (i, &item) in bytes.iter().enumerate() {
