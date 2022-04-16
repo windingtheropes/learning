@@ -20,6 +20,14 @@ fn main() {
         let prev_index = if i as i32 - 1 > -1 { i } else { 0 };
         println!("{}", &options[prev_index..i+1]);
     }
+
+    // array slices
+
+    let a = [1,2,3,4,5,6,7];
+
+    let slice = &a[1..3];
+
+    assert_eq!(slice, &[2,3]); // checks if left = right
 }
 
 fn first_word(s: &str) -> &str { // &str allows string literals and String references.
