@@ -5,6 +5,24 @@ struct Rectangle {
     height: u32,
 }
 
+impl Rectangle {
+    fn square(size: u32) -> Rectangle { // this is an associated function, it can be run by Rectangle::square, it does not have self as its first variable. used for creating new structs like String::from.
+        Rectangle { width: size, height: size }
+    }
+    fn area(&self) -> u32 { // this is a method, it has self as the first variable, which is the struct data of which youre running the method from. 
+        self.width * self.height
+    }
+    fn width(&self) -> bool {
+        self.width > 0 // r.width() returns true if the width is greater than 0, r.width is the actual wdith
+    }
+    fn height(&self) -> bool {
+        self.height > 0 
+    }
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width >= other.width && self.height >= other.height
+    }
+}
+
 fn main() {
 
     // first method, using single variables, and _1area()
@@ -35,6 +53,21 @@ fn main() {
     println!("rect1 is {:#?}", rect1); // pretty print
 
     dbg!(&rect1); // dbg takes ownership so must pass a reference. it also prints to stderror. dbg also returns the value of the expression. 
+
+    // fourth method, using struct methods
+    
+    let rect1 = Rectangle { width: 30, height: 50 };
+    println!("m4 The area of the rectangle is {} square pixels.", rect1.area()); // we use a reference because we do not want to give _3area's scope ownership of rectangle
+
+    let rect2 = Rectangle { width:50, height:60 };
+    let rect3 = Rectangle { width:20, height:40 };
+
+    println!("{:?} can fit inside {:?}? {}", rect2, rect1, rect1.can_hold(&rect2));
+    println!("{:?} can fit inside {:?}? {}", rect3, rect1, rect1.can_hold(&rect3));
+
+    let square = dbg!(Rectangle::square(10));
+
+
 }
 
 fn _1area(width: u32, height: u32) -> u32 {
