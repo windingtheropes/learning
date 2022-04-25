@@ -17,8 +17,7 @@ fn main() {
     let hello2 = hi2.clone(); // this cloned hi2, is more resource expensive, but works as copying fixed size variables would.
 
     println!("here is hi2 {} and here is hello2 {}", hi2, hello2);
-
-
+    
     let x = 1;
     makes_copy(x);
 
