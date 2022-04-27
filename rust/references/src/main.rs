@@ -37,7 +37,9 @@ fn get_return() -> String { // there are no references needed for this, because 
     s
 }
 
+// references don't have values themselves, they point to values.
 // There can only be one mutable reference pointing to the same variable at one time
+// mutable references can be changed and when changed the original value it points to is changed. the refernce must first be dereferenced using asterisk (*)
 // There can be as many immutable references pointing to the same variable at one time
 // There cannot be both immutable references and mutable references pointing to the same variable at one time
 
